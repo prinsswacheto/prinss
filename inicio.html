@@ -1,108 +1,323 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proyecto Productivo - Reutilización de Aceite</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Productivo - Reutilización de Aceite</title>
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f7f6;
-    color: #333;
-}
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-image: url(img/agua.gif);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
 
-/* LOGO */
-.logo {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    width: 90px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 1000;
-}
+        /* LOGO */
+        .logo {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            width: 90px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0.8;
+        }
 
-header {
-    background: #2e7d32;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+        /* IMAGEN GRUPAL */
+        .grupo {
+            display: block;
+            margin: 30px auto;
+            max-width: 90%;
+            border-radius: 12px;
+        }
 
-nav {
-    background: #1b5e20;
-    padding: 10px;
-    text-align: center;
-}
+        /* HEADER */
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/fondo.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
 
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        /* NAV */
+        nav {
+            background: #1365b6;
+            padding: 10px;
+            text-align: center;
+        }
 
-section {
-    padding: 30px;
-    margin: 20px;
-    background: white;
-    border-radius: 10px;
-}
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-h2 {
-    color: #2e7d32;
-}
+        /* SECTIONS */
+        section {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 25px;
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #2e7d32;
-    color: white;
-}
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
 
-.card {
-    background: #e8f5e9;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-}
-</style>
+            border-radius: 12px;
+            color: white;
+
+            text-align: justify;
+            line-height: 1.6;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* TEXTO */
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        h3 {
+            text-align: center;
+            color: #a5d6a7;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2e7d32;
+            color: white;
+        }
+
+        #integrantes {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        #integrantes ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #integrantes li {
+            cursor: pointer;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        /* cartas */
+        .cartas {
+            position: relative;
+            width: 140px;
+            height: 180px;
+        }
+
+        .carta {
+            position: absolute;
+            width: 140px;
+            height: 180px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        /* efecto apilado */
+        .carta:nth-child(1) {
+            transform: translate(0px, 0px);
+            z-index: 1;
+        }
+
+        .carta:nth-child(2) {
+            transform: translate(5px, 5px);
+            z-index: 2;
+        }
+
+        .carta:nth-child(3) {
+            transform: translate(10px, 10px);
+            z-index: 3;
+        }
+
+        .carta:nth-child(4) {
+            transform: translate(15px, 15px);
+            z-index: 4;
+        }
+
+        /* carta activa */
+        .carta.activa {
+            transform: translate(160px, 0) scale(1.05);
+            z-index: 10;
+        }
+    </style>
 </head>
+
+
+<audio autoplay id="miAudio" loop>
+    <source src="img/audio.mpeg" type="audio/mpeg">
+</audio>
+<script>
+    /*AUDIO*/
+    document.addEventListener("click", () => {
+        const audio = audio
+        document.getElementById("miAudio");
+        audio.play();
+    }, { once: true });
+
+    /*FOTOS*/
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const nombres = document.querySelectorAll("#integrantes ul li");
+        const cartas = document.querySelectorAll(".carta");
+
+        nombres.forEach((nombre, index) => {
+            nombre.addEventListener("mouseenter", () => {
+                cartas.forEach(c => c.classList.remove("activa"));
+                cartas[index].classList.add("activa");
+            });
+
+            nombre.addEventListener("mouseleave", () => {
+                cartas[index].classList.remove("activa");
+            });
+        });
+
+    });
+</script>
 
 <body>
 
-    <!-- LOGO ARRIBA IZQUIERDA -->
-<img src="Prinss.png" class="logo">
+    <img src="img/Prinss.png" class="logo">
 
-<header>
-    <h1>🌱 Proyecto Productivo</h1>
-    <p>Reutilización de aceite usado para productos sostenibles</p>
-</header>
+    <header>
+        <h1>🌱 Proyecto Productivo</h1>
+        <p>Reutilización de aceite usado para productos sostenibles</p>
+    </header>
 
-<nav>
-    <a href="#inicio">Inicio</a>
-    <a href="proyecto.html">Sobre el proyecto</a>
-    <a href="equipo.html">Equipo</a>
-    <a href="implementacion.html">Implementación</a>
-    <a href="multimedia.html">Multimedia</a>
-    <a href="impacto.html">Impacto</a>
-    <a href="contacto.html">Contacto</a>
-</nav>
+    <nav>
+        <a href="#inicio">Pagina Principal</a>
+        <a href="proyecto.html">Gestión estrategica</a>
+        <a href="equipo.html">Equipo</a>
+        <a href="implementacion.html">Implementación</a>
+        <a href="multimedia.html">Multimedia</a>
+        <a href="impacto.html">Impacto</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
 
-<section id="inicio">
-    <h2>🏠 Inicio</h2>
-    <p><strong>Bienvenidos</strong> a nuestra plataforma digital donde presentamos una propuesta sostenible basada en la reutilización del aceite de cocina usado.</p>
-    
-    <p>Este proyecto busca transformar un residuo contaminante en productos ecológicos como jabones y velas.</p>
+    <section id="inicio">
+        <h3>🌿 BIENVENIDA</h3>
+        <p>¿Sabía usted que tan solo un litro de aceite de cocina usado puede contaminar hasta 40,000 litros de agua?
+        </p>
+        <p>Bienvenidos a nuestro proyecto ambiental 🌱</p>
+        <p>Somos estudiantes de grado 11 del programa de Técnica en Promotoría en Manejo Ambiental del Instituto Técnico
+            Mercedes Ábrego, y hemos creado este espacio con el propósito de compartir una iniciativa que nace desde la
+            conciencia, el compromiso y el deseo de generar un cambio positivo en nuestro entorno.
+            <br><br>
+            En esta página encontrarás el desarrollo de nuestro proyecto enfocado en la reutilización del aceite de
+            cocina usado, un residuo que, aunque común, puede causar graves daños al medio ambiente cuando no se maneja
+            adecuadamente. A través de nuestro trabajo, buscamos demostrar que es posible transformar este desecho en
+            productos útiles y sostenibles como jabones, velas ecológicas y soluciones de limpieza como el fabuloso.
+            <br><br>
+            Más allá de recolectar aceite, nuestra propuesta también promueve el aprovechamiento de materiales
+            reciclables, como envases plásticos, contribuyendo así a la reducción de residuos y al cuidado de nuestros
+            recursos naturales.
+            <br><br>
+            Este proyecto no solo busca disminuir la contaminación del agua y del suelo, sino también fomentar una
+            cultura ambiental responsable, donde cada acción cuenta y cada pequeño cambio puede generar un gran impacto.
+            <br><br>
+            Te invitamos a conocer nuestro trabajo, a reflexionar sobre el cuidado del medio ambiente y a ser parte de
+            este camino hacia un futuro más sostenible 💚
+        </p>
+    </section>
 
-    <p><em>"Transformar residuos en soluciones sostenibles para el futuro."</em></p>
-</section>
+    <img src="img/grupal.jpg" class="grupo">
 
-<footer>
-    <p>© 2026 Proyecto Productivo - Sostenibilidad</p>
-</footer>
+    <section id="somos">
+        <h3>🌍 ¿QUIÉNES SOMOS?</h3>
+        <p>Somos un grupo de estudiantes comprometidos con el cuidado del medio ambiente, pertenecientes al Instituto
+            Técnico Mercedes Ábrego. A través de nuestra formación en el área ambiental, hemos desarrollado este
+            proyecto con el fin de aportar soluciones reales a problemáticas presentes en nuestra comunidad educativa.
+        </p>
+    </section>
+
+    <section id="mision">
+        <h3>🎯 MISIÓN</h3>
+        <p>Promover el aprovechamiento responsable del aceite de cocina usado mediante su recolección y transformación
+            en productos ecológicos, contribuyendo a la reducción de la contaminación ambiental y fortaleciendo la
+            educación ambiental en la comunidad.</p>
+    </section>
+
+    <section id="vision">
+        <h3>🔭 VISIÓN</h3>
+        <p>Ser una iniciativa estudiantil reconocida por su aporte al cuidado del medio ambiente, fomentando prácticas
+            sostenibles y el desarrollo de proyectos ecológicos que puedan ser replicados en otras instituciones.</p>
+    </section>
+
+    <section id="valores">
+        <h3>💚 VALORES</h3>
+        <p>Responsabilidad ambiental: Porque entendemos que nuestras acciones tienen un impacto directo en el entorno,
+            asumimos el compromiso de cuidar y proteger los recursos naturales.
+            <br>
+            Compromiso: Trabajamos con dedicación y constancia para cumplir nuestros objetivos y aportar soluciones
+            reales a una problemática ambiental.
+            <br>
+            Trabajo en equipo: Creemos que las mejores ideas nacen de la unión y el esfuerzo conjunto, donde cada
+            integrante aporta para lograr un mismo propósito.
+            <br>Innovación: Buscamos nuevas formas de transformar los residuos en oportunidades, proponiendo
+            alternativas creativas y sostenibles.
+            <br>Conciencia ecológica: Promovemos el respeto por el medio ambiente, fomentando hábitos responsables en
+            nuestra comunidad.
+            <br>Sostenibilidad: Pensamos en el presente sin comprometer el futuro, desarrollando acciones que puedan
+            mantenerse en el tiempo y generar un impacto positivo.
+        </p>
+    </section>
+
+    <section id="obpr">
+        <h3>📌 OBJETIVOS Y PRINCIPIOS</h3>
+        <p>Nuestro proyecto tiene como objetivo principal reutilizar el aceite vegetal usado proveniente del comedor del
+            Instituto Técnico Mercedes Ábrego, transformándolo en productos alternativos sostenibles que contribuyan al
+            cuidado del medio ambiente.</p>
+        <br>Para lograrlo, nos enfocamos en:<br>
+        <ul>
+            <li>Recolectar adecuadamente el aceite usado</li>
+            <li>Elaborar productos ecológicos</li>
+            <li>Promover estrategias de sensibilización</li>
+        </ul>
+        <br>
+        <p>A través de este proceso, buscamos no solo reducir el impacto ambiental, sino también incentivar una cultura
+            de aprovechamiento de residuos y consumo responsable.</p>
+    </section>
+
+    <section id="integrantes">
+        <h3>👥 INTEGRANTES</h3>
+        <ul>
+            <li>Josep Adair Corredor Suárez</li>
+            <li>Lakshmi Valentina Estrada Daza</li>
+            <li>Gabriela Alejandra Paipa Beltrán</li>
+            <li>Danna Valentina Suárez Palacios</li>
+        </ul>
+        <div class="cartas">
+            <div class="carta" style="background-image:url('img/ft1.jpeg')"></div>
+            <div class="carta" style="background-image:url('img/ft2.jpeg')"></div>
+            <div class="carta" style="background-image:url('img/ft3.jpeg')"></div>
+            <div class="carta" style="background-image:url('img/ft4.jpeg')"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Proyecto Productivo - Sostenibilidad</p>
+    </footer>
 
 </body>
+
 </html>
+
