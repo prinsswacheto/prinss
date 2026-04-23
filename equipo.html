@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proyecto Productivo - Reutilización de Aceite</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Productivo - Reutilización de Aceite</title>
+
 
     <style>
         body {
@@ -84,7 +86,7 @@
             font-size: 16px;
         }
 
-        h2 {
+        h3 {
             text-align: center;
             color: #a5d6a7;
         }
@@ -158,41 +160,106 @@
             transform: translate(160px, 0) scale(1.05);
             z-index: 10;
         }
+
+        @media (max-width: 768px) {
+
+            #integrantes {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .cartas {
+                position: static;
+                /* quita el absoluto */
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+
+            .carta {
+                position: static;
+                /* importante */
+                width: 100%;
+                height: 150px;
+                transform: none !important;
+                /* elimina animaciones raras */
+            }
+        }
     </style>
+</head>
+
+
+<audio autoplay id="miAudio" loop>
+    <source src="img/audio.mpeg" type="audio/mpeg">
+</audio>
+<script>
+    /*AUDIO*/
+    document.addEventListener("click", () => {
+        const audio = audio
+        document.getElementById("miAudio");
+        audio.play();
+    }, { once: true });
+
+    /*FOTOS*/
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const nombres = document.querySelectorAll("#integrantes ul li");
+        const cartas = document.querySelectorAll(".carta");
+
+        nombres.forEach((nombre, index) => {
+            nombre.addEventListener("mouseenter", () => {
+                cartas.forEach(c => c.classList.remove("activa"));
+                cartas[index].classList.add("activa");
+            });
+
+            nombre.addEventListener("mouseleave", () => {
+                cartas[index].classList.remove("activa");
+            });
+        });
+
+    });
+</script>
 </head>
 
 <body>
 
-<header>
-    <h1>🌱 Proyecto Productivo</h1>
-    <p>Reutilización de aceite usado para productos sostenibles</p>
-</header>
+    <img src="img/Prinss.png" class="logo">
 
-<nav>
-    <a href="inicio.html">Inicio</a>
-    <a href="proyecto.html">Sobre el proyecto</a>
-    <a href="#equipo">Equipo</a>
-    <a href="implementacion.html">Implementación</a>
-    <a href="multimedia.html">Multimedia</a>
-    <a href="impacto.htlm">Impacto</a>
-    <a href="contacto.html">Contacto</a>
-</nav>
+    <header>
+        <h1>🌱 Proyecto Productivo</h1>
+        <p>Reutilización de aceite usado para productos sostenibles</p>
+    </header>
 
-<section id="equipo">
-    <h2>👥 Equipo de Trabajo</h2>
-    <ul>
-        <li>Josep Corredor – Producción</li>
-        <li>Lakshmi Estrada – Investigación</li>
-        <li>Gabriela Paipa – Diseño</li>
-        <li>Danna Suarez – Comunicación</li>
-    </ul>
+    <nav>
+        <a href="inicio.html">Pagina Principal</a>
+        <a href="proyecto.html">Gestión Estrategica</a>
+        <a href="#equipo.">Gestión Directiva</a>
+        <a href="implementacion.html">Gestión Organizacional</a>
+        <a href="multimedia.html">Gestión Comunitaria</a>
+        <a href="impacto.html">Orientación Académica</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
 
-    <p><strong>🎥 Elevator Pitch:</strong> Inserta aquí tu video</p>
-</section>
+    <section id="equipo">
+        <h2>👥 Equipo de Trabajo</h2>
+        <ul>
+            <li>Josep Corredor – Producción</li>
+            <li>Lakshmi Estrada – Investigación</li>
+            <li>Gabriela Paipa – Diseño</li>
+            <li>Danna Suarez – Comunicación</li>
+        </ul>
 
-<footer>
-    <p>© 2026 Proyecto Productivo - Sostenibilidad</p>
-</footer>
+        <p><strong>🎥 Elevator Pitch:</strong> Inserta aquí tu video</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Proyecto Productivo - Sostenibilidad</p>
+    </footer>
 
 </body>
+
 </html>
