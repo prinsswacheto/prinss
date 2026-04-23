@@ -5,59 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Proyecto Productivo - Reutilización de Aceite</title>
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f7f6;
-    color: #333;
-}
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-image: url(img/agua.gif);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
 
-header {
-    background: #2e7d32;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+        /* LOGO */
+        .logo {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            width: 90px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            opacity: 0.8;
+        }
 
-nav {
-    background: #1b5e20;
-    padding: 10px;
-    text-align: center;
-}
+        /* IMAGEN GRUPAL */
+        .grupo {
+            display: block;
+            margin: 30px auto;
+            max-width: 90%;
+            border-radius: 12px;
+        }
 
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        /* HEADER */
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/fondo.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
 
-section {
-    padding: 30px;
-    margin: 20px;
-    background: white;
-    border-radius: 10px;
-}
+        /* NAV */
+        nav {
+            background: #1365b6;
+            padding: 10px;
+            text-align: center;
+        }
 
-h2 {
-    color: #2e7d32;
-}
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #2e7d32;
-    color: white;
-}
+        /* SECTIONS */
+        section {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 25px;
 
-.card {
-    background: #e8f5e9;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-}
-</style>
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
+
+            border-radius: 12px;
+            color: white;
+
+            text-align: justify;
+            line-height: 1.6;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* TEXTO */
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #a5d6a7;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2e7d32;
+            color: white;
+        }
+
+        #integrantes {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        #integrantes ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #integrantes li {
+            cursor: pointer;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        /* cartas */
+        .cartas {
+            position: relative;
+            width: 140px;
+            height: 180px;
+        }
+
+        .carta {
+            position: absolute;
+            width: 140px;
+            height: 180px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+        }
+
+        /* efecto apilado */
+        .carta:nth-child(1) {
+            transform: translate(0px, 0px);
+            z-index: 1;
+        }
+
+        .carta:nth-child(2) {
+            transform: translate(5px, 5px);
+            z-index: 2;
+        }
+
+        .carta:nth-child(3) {
+            transform: translate(10px, 10px);
+            z-index: 3;
+        }
+
+        .carta:nth-child(4) {
+            transform: translate(15px, 15px);
+            z-index: 4;
+        }
+
+        /* carta activa */
+        .carta.activa {
+            transform: translate(160px, 0) scale(1.05);
+            z-index: 10;
+        }
+    </style>
 </head>
 
 <body>
