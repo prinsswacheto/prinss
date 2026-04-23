@@ -159,6 +159,35 @@
             transform: translate(160px, 0) scale(1.05);
             z-index: 10;
         }
+
+        @media (max-width: 768px) {
+
+            #integrantes {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .cartas {
+                position: static;
+                /* quita el absoluto */
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+
+            .carta {
+                position: static;
+                /* importante */
+                width: 100%;
+                height: 150px;
+                transform: none !important;
+                /* elimina animaciones raras */
+            }
+        }
     </style>
 </head>
 
@@ -205,11 +234,11 @@
 
     <nav>
         <a href="#inicio">Pagina Principal</a>
-        <a href="proyecto.html">Gestión estrategica</a>
-        <a href="equipo.html">Equipo</a>
-        <a href="implementacion.html">Implementación</a>
-        <a href="multimedia.html">Multimedia</a>
-        <a href="impacto.html">Impacto</a>
+        <a href="proyecto.html">Gestión Estrategica</a>
+        <a href="equipo.html">Gestión Directiva</a>
+        <a href="implementacion.html">Gestión Organizacional</a>
+        <a href="multimedia.html">Gestión Comunitaria</a>
+        <a href="impacto.html">Orientación Académica</a>
         <a href="contacto.html">Contacto</a>
     </nav>
 
@@ -320,4 +349,3 @@
 </body>
 
 </html>
-
