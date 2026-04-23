@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proyecto Productivo - Reutilización de Aceite</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Productivo - Reutilización de Aceite</title>
 
     <style>
         body {
@@ -84,7 +85,17 @@
             font-size: 16px;
         }
 
+        h1 {
+            text-align: center;
+            color: #a5d6a7;
+        }
+
         h2 {
+            text-align: center;
+            color: #a5d6a7;
+        }
+
+        h3 {
             text-align: center;
             color: #a5d6a7;
         }
@@ -132,31 +143,40 @@
             transition: transform 0.4s ease, opacity 0.4s ease;
         }
 
-        /* efecto apilado */
-        .carta:nth-child(1) {
-            transform: translate(0px, 0px);
-            z-index: 1;
+        /*REFERENCIAS */
+        #refecias .ref {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        .carta:nth-child(2) {
-            transform: translate(5px, 5px);
-            z-index: 2;
+        #refecias .ref img {
+            width: 100%;
+            max-width: 120px;
+            height: auto;
+            border-radius: 8px;
         }
 
-        .carta:nth-child(3) {
-            transform: translate(10px, 10px);
-            z-index: 3;
+        #refecias .ref div {
+            flex: 1;
         }
 
-        .carta:nth-child(4) {
-            transform: translate(15px, 15px);
-            z-index: 4;
-        }
+        @media (max-width: 768px) {
 
-        /* carta activa */
-        .carta.activa {
-            transform: translate(160px, 0) scale(1.05);
-            z-index: 10;
+            #refecias .ref {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            #refecias .ref img {
+                max-width: 150px;
+            }
+
+            #refecias .ref div {
+                width: 100%;
+            }
+
         }
     </style>
 </head>
@@ -196,56 +216,142 @@
 
 <body>
 
-<header>
-    <h1>🌱 Proyecto Productivo</h1>
-    <p>Reutilización de aceite usado para productos sostenibles</p>
-</header>
+    <img src="img/Prinss.png" class="logo">
 
-<nav>
-    <a href="inicio.html">Inicio</a>
-    <a href="#proyecto">Gestión estrategica</a>
-    <a href="equipo.html">Equipo</a>
-    <a href="implementacion.html">Implementación</a>
-    <a href="multimedia.html">Multimedia</a>
-    <a href="impacto.html">Impacto</a>
-    <a href="contacto.html">Contacto</a>
-</nav>
+    <header>
+        <h1>🌱 Proyecto Productivo</h1>
+        <p>Reutilización de aceite usado para productos sostenibles</p>
+    </header>
 
-<h2>Documentos</h2>
-<section id="documentos">
-    <h3>Oficial</h3>
-    <iframe
-    src="img/DOC1.pdf"
-    width="100%"
-    height="900hv"
-    style="border: none;">
-</iframe>
-    <h3>Referentes</h3>
-</section>
+    <nav>
+        <a href="inicio.html">Pagina Principal</a>
+        <a href="#proyecto">Gestión Estrategica</a>
+        <a href="equipo.html">Gestión Directiva</a>
+        <a href="implementacion.html">Gestión Organizacional</a>
+        <a href="multimedia.html">Gestión Comunitaria</a>
+        <a href="impacto.html">Orientación Académica</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
 
-<section id="presentación">
+    <h1>Documentos</h1>
+    <section id="documentos">
+        <section id="ofi">
+            <h3>Oficial</h3>
+            <iframe src="img/DOC1.pdf" width="100%" height="900hv" style="border: none;">
+            </iframe>
+        </section>
 
-</section>
+        <section id="refecias">
+            <h3>Referentes</h3>
+            <div class="ref">
+                <img src="img/foto1.png">
+                <div>
+                    <h4>Elaboración de Velas Aromáticas con aceite usado como estrategia para la prevención de la
+                        contaminación en fuentes hídricas</h4>
+                    <p>María Fernanda Pedroza Fontalvo, Valerien José Martínez Coronado. (2022). Elaboración de Velas
+                        Aromáticas con aceite usado como estrategia para la prevención de la contaminación en fuentes
+                        hídricas. <br>REVISTAS SENA. <a
+                            href="https://doi.org/10.23850/23899573.5434">DOI</a></p>
+                </div>
+            </div>
+            <br><hr>
+            <div class="ref">
+                <img src="img/foto2.png">
+                <div>
+                    <h4>Análisis técnico del aprovechamiento del aceite vegetal usado del catón Cuenca-Ecuador.</h4>
+                    <p>Cárdenas Bravo, M. B., & Vélez Delgado, J. J. (2022). Análisis técnico del aprovechamiento del
+                        aceite vegetal usado del cantón Cuenca – Ecuador. Universidad Politécnica Salesiana, Ecuador.
+                        <br>LINK. <a
+                            href="https://dspace.ups.edu.ec/bitstream/123456789/23501/4/UPS-CT010100.pdf">DSPACE UPS</a>
+                    </p>
+                </div>
+            </div>
+            <br><hr>
+            <div class="ref">
+                <img src="img/foto3.png">
+                <div>
+                    <h4>Aprovechamiento del Aceite Residual de Cocina como estrategia de Proyectos Productivos para la
+                        disminución del Impacto Ambiental en la Comunidad Educativa de Grado Quinto de la Institución
+                        Francisco Javier Cisneros, Distrito de Buenaventura</h4>
+                    <p>Cárdenas Ortiz, L.C. et al. 2023. Aprovechamiento del Aceite Residual de Cocina como estrategia
+                        de Proyectos Productivos para la disminución del Impacto Ambiental en la Comunidad Educativa de
+                        Grado Quinto de la Institución Francisco Javier Cisneros, Distrito de Buenaventura. Ingeniería e
+                        Innovación. 11, 1 (Jul. 2023).<br>LINK. <a
+                            href="https://doi.org/10.21897/rii.3342">DOI</a></p>
+                </div>
+            </div>
+            <br><hr>
+            <div class="ref">
+                <img src="img/foto4.png">
+                <div>
+                    <h4>Análisis técnico del aprovechamiento del aceite vegetal usado del catón Cuenca-Ecuador.</h4>
+                    <p>Amorocho Galván, M. (2024). Elaboración de jabones artesanales mediante el proceso de
+                        saponificación en frío con aceite de cocina usado como estrategia pedagógica para la enseñanza
+                        de Ciencias Naturales en estudiantes de grado once del Colegio Gimnasio Monteverde de Lebrija.
+                        [Trabajo de Investigación e Innovación, Corporación Universitaria Minuto de Dios - UNIMINUTO].
+                        <br>Repositorio <a
+                            href="https://repository.uniminuto.edu/bitstreams/bb4785ae-d455-4e52-89a2-7d799fdff826/download">Repositorio UNIMINUTO.</a>
+                    </p>
+                </div>
+            </div>
+            <br><hr>
+            <div class="ref">
+                <img src="img/foto5.png">
+                <div>
+                    <h4>Elaboración de velas aromáticas con aceite usado como estrategia para la prevención de la
+                        contaminación en fuentes hídricas.</h4>
+                    <p>Pedroza Fontalvo, M. F., & Martínez Coronado, V. J. (2022). Elaboración de velas aromáticas con
+                        aceite usado como estrategia para la prevención de la contaminación en fuentes hídricas. Revista
+                        Sennova: Revista del Sistema de Ciencia, Tecnología e Innovación.<br>LINK. <a
+                            href="https://doi.org/10.23850/23899573.5434">DOI</a></p>
+                </div>
+            </div>
+            <br><hr>
+            <div class="ref">
+                <img src="img/foto6.png">
+                <div>
+                    <h4>Optimización de un protocolo de elaboración de jabón a partir de residuos de aceite de cocina
+                        usado.</h4>
+                    <p>Pabón Figueroa, L. V., Maya Martínez, K. E., Mora Delgado, L. E., & Cabrera Solarte, A. E.
+                        (2022). Optimización de un protocolo de elaboración de jabón a partir de residuos de aceite de
+                        cocina usado. CON-CIENCIA y TÉCNICA (Revista Tecnoacademia), 6(1), 72–74<br>LINK. <a
+                            href="https://revistas.sena.edu.co/index.php/conciencia/article/view/3929">Revista Sena</a>
+                    </p>
+                </div>
+            </div>
+        </section>
 
-<section id="infografia">
+    </section>
 
-</section>
+        <h1>Presentación</h1>
+    <section id="presentación">
 
-<section id="Video">
+    </section>
 
-</section>
+        <h1>Infografía</h1>
+    <section id="infografia">
 
-<section id="Podcast">
+    </section>
 
-</section>
+        <h1>Video</h1>
+    <section id="Video">
 
-<section id="Biblioteca virtual">
+    </section>
 
-</section>
+    <h1>Podcast</h1>
+    <section id="Podcast">
 
-<footer>
-    <p>© 2026 Proyecto Productivo - Sostenibilidad</p>
-</footer>
+    </section>
+
+    <h1>Biblioteca Virtual</h1>
+    <section id="Biblioteca virtual">
+
+    </section>
+
+    <footer>
+        <p>© 2026 Proyecto Productivo - Sostenibilidad</p>
+    </footer>
 
 </body>
+
 </html>
