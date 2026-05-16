@@ -55,11 +55,48 @@
             text-align: center;
         }
 
-        nav a {
+        .menu-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .menu-btn {
             color: white;
-            margin: 10px;
             text-decoration: none;
+            padding: 10px;
             font-weight: bold;
+            display: inline-block;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+
+            background: rgba(0, 0, 0, 0.9);
+
+            min-width: 220px;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            z-index: 1000;
+        }
+
+        .submenu a {
+            display: block;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        .submenu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu-item:hover .submenu {
+            display: block;
         }
 
         /* SECTIONS */
@@ -188,6 +225,38 @@
                 /* elimina animaciones raras */
             }
         }
+
+        /*BOTON SUBIR*/
+        #btnArriba {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+
+            width: 55px;
+            height: 55px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: rgba(19, 101, 182, 0.9);
+            color: white;
+
+            font-size: 24px;
+            cursor: pointer;
+
+            display: none;
+
+            z-index: 9999;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+            transition: 0.3s;
+        }
+
+        #btnArriba:hover {
+            transform: scale(1.1);
+            background: #2e7d32;
+        }
     </style>
 </head>
 
@@ -195,6 +264,9 @@
 <audio autoplay id="miAudio" loop>
     <source src="img/audio.mpeg" type="audio/mpeg">
 </audio>
+
+<button id="btnArriba">⬆</button>
+
 <script>
     /*AUDIO*/
     document.addEventListener("click", () => {
@@ -221,7 +293,31 @@
         });
 
     });
+
+    /* BOTON ARRIBA */
+    const btnArriba = document.getElementById("btnArriba");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+            btnArriba.style.display = "block";
+        } else {
+            btnArriba.style.display = "none";
+        }
+
+    });
+
+    btnArriba.addEventListener("click", () => {
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
 </script>
+
 
 <body>
 
@@ -233,13 +329,98 @@
     </header>
 
     <nav>
-        <a href="#inicio">Pagina Principal</a>
-        <a href="proyecto.html">Gestión Estrategica</a>
-        <a href="equipo.html">Gestión Directiva</a>
-        <a href="implementacion.html">Gestión Organizacional</a>
-        <a href="multimedia.html">Gestión Comunitaria</a>
-        <a href="impacto.html">Orientación Académica</a>
-        <a href="contacto.html">Contacto</a>
+
+        <!-- INICIO -->
+        <div class="menu-item">
+            <a href="inicio.html" class="menu-btn">Pagina Principal</a>
+
+            <div class="submenu">
+                <a href="inicio.html#inicio">Bienvenida</a>
+                <a href="inicio.html#somos">¿Quiénes Somos?</a>
+                <a href="inicio.html#mision">Misión</a>
+                <a href="inicio.html#vision">Visión</a>
+                <a href="inicio.html#valores">Valores</a>
+                <a href="inicio.html#obpr">Objetivos</a>
+                <a href="inicio.html#integrantes">Integrantes</a>
+                <a href="inicio.html#video">Video</a>
+            </div>
+        </div>
+
+        <!-- GESTIÓN ESTRATÉGICA -->
+        <div class="menu-item">
+            <a href="proyecto.html" class="menu-btn">
+                Gestión Estratégica
+            </a>
+
+            <div class="submenu">
+                <a href="proyecto.html#documentos">Documentos</a>
+                <a href="proyecto.html#presentación">Presentación</a>
+                <a href="proyecto.html#infografia">Infografia</a>
+                <a href="proyecto.html#Podcast">Podcast</a>
+                <a href="proyecto.html#Biblioteca Virtual">Biblioteca Virtual</a>
+            </div>
+        </div>
+
+        <!-- GESTIÓN DIRECTIVA -->
+        <div class="menu-item">
+            <a href="equipo.html" class="menu-btn">
+                Gestión Directiva
+            </a>
+
+            <div class="submenu">
+                <a href="equipo.html#lideres">Líderes</a>
+                <a href="equipo.html#roles">Roles</a>
+            </div>
+        </div>
+
+        <!-- GESTIÓN ORGANIZACIONAL -->
+        <div class="menu-item">
+            <a href="implementacion.html" class="menu-btn">
+                Gestión Organizacional
+            </a>
+
+            <div class="submenu">
+                <a href="implementacion.html#procesos">Procesos</a>
+                <a href="implementacion.html#implementacion">Implementación</a>
+            </div>
+        </div>
+
+        <!-- GESTIÓN COMUNITARIA -->
+        <div class="menu-item">
+            <a href="multimedia.html" class="menu-btn">
+                Gestión Comunitaria
+            </a>
+
+            <div class="submenu">
+                <a href="multimedia.html#galeria">Galería</a>
+                <a href="multimedia.html#videos">Videos</a>
+            </div>
+        </div>
+
+        <!-- ORIENTACIÓN -->
+        <div class="menu-item">
+            <a href="impacto.html" class="menu-btn">
+                Orientación Académica
+            </a>
+
+            <div class="submenu">
+                <a href="impacto.html#impacto">Impacto</a>
+                <a href="impacto.html#resultados">Resultados</a>
+            </div>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="menu-item">
+            <a href="contacto.html" class="menu-btn">
+                Contacto
+            </a>
+
+            <div class="submenu">
+                <a href="contacto.html#redes">Redes</a>
+                <a href="contacto.html#correo">Correo</a>
+            </div>
+        </div>
+
     </nav>
 
     <section id="inicio">
@@ -340,6 +521,13 @@
             <div class="carta" style="background-image:url('img/ft3.jpeg')"></div>
             <div class="carta" style="background-image:url('img/ft4.jpeg')"></div>
         </div>
+    </section>
+
+    <section id="video">
+        <h3>VIDEO</h3>
+        <video controls width="100%">
+            <source src="img/video.mp4" type="video/mp4"> Tu navegador no soporta video
+        </video>
     </section>
 
     <footer>
