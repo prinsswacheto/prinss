@@ -216,15 +216,48 @@
 
         }
 
-        video {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
+        /*videos*/
+        .videos {
+            text-align: center;
         }
 
-        .video-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .intro-video {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .video-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .video-btn {
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            background: rgba(46, 125, 50, 0.9);
+
+            color: white;
+            text-decoration: none;
+
+            border-radius: 12px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-btn:hover {
+            transform: translateY(-5px) scale(1.03);
+
+            background: #43a047;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
         /*BOTON SUBIR*/
@@ -625,6 +658,47 @@
 
     <h1>Infografía</h1>
     <section id="infografia">
+
+    </section>
+
+    <section id="Videos">
+
+        <h3>🎥 VIDEOS EDUCATIVOS</h3>
+
+        <div class="videos">
+
+            <p class="intro-video">
+                ✨ Te invitamos a explorar los siguientes videos y presentaciones
+                de apoyo, donde podrás conocer distintas iniciativas relacionadas
+                con la reutilización del aceite de cocina usado para la elaboración
+                de productos ecológicos como jabones y velas sostenibles.
+
+                <br><br>
+
+                Estos materiales buscan generar conciencia sobre el impacto ambiental
+                que produce el mal manejo del aceite residual y demostrar que,
+                mediante pequeñas acciones, es posible transformar un residuo
+                contaminante en alternativas útiles, creativas y amigables con el
+                medio ambiente. 🌱♻️🧼🕯️
+            </p>
+
+            <div class="video-links">
+
+                <a href="https://youtu.be/9PNCRqe5WkU?si=Qw6zr_49PAkKcYQn" target="_blank" class="video-btn">
+                    🧼 Elaboración de Jabón Ecológico
+                </a>
+
+                <a href="https://youtu.be/fKKRLvdXWIA?si=PRpRNaVMKnjnSeIU" target="_blank" class="video-btn">
+                    ♻️ Reutilización del Aceite Usado
+                </a>
+
+                <a href="https://youtu.be/fFayDjQv4i0?si=sEpGIH9Mc0xh2L9D" target="_blank" class="video-btn">
+                    🕯️ Velas con Aceite Reciclado
+                </a>
+
+            </div>
+
+        </div>
 
     </section>
 
