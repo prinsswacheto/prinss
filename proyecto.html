@@ -356,6 +356,46 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
         }
 
+        /* INFOGRAFÍA PRINCIPAL */
+        .info-principal {
+            text-align: center;
+        }
+
+        .info-principal img {
+            width: 100%;
+
+            max-width: 700px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+        .info-principal img:hover {
+            transform: scale(1.02);
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        /* LINEA DIVISORIA */
+        .linea-info {
+            border: none;
+
+            height: 2px;
+
+            width: 80%;
+
+            margin: 30px auto;
+
+            background: rgba(255, 255, 255, 0.3);
+
+            border-radius: 10px;
+        }
+
         /*BILBLIOTECAVIRTUAL*/
         .doc-container {
             width: 100%;
@@ -723,12 +763,29 @@
 
     </section>
 
-    <section id="infografia">
-        <h1>📊 Infografía</h1>
+    <h1>📊 Infografía</h1>
 
-        <div class="galeria-info">
+    <section id="infografia">
+
+        <!-- INFOGRAFÍA PRINCIPAL -->
+        <div class="info-principal">
+
+            <h3>🌟 Infografía Principal</h3>
 
             <img src="img/mi proyecto.png" alt="Infografía principal">
+
+        </div>
+
+        <br>
+
+        <hr class="linea-info">
+
+        <br>
+
+        <!-- INFOGRAFÍAS SECUNDARIAS -->
+        <h3>📚 Infografías Complementarias</h3>
+
+        <div class="galeria-info">
 
             <img src="img/1.png" alt="Infografía 1">
 
@@ -741,6 +798,7 @@
         </div>
 
     </section>
+
     <section id="Videos">
 
         <h3>🎥 VIDEOS EDUCATIVOS</h3>
