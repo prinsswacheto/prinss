@@ -321,6 +321,73 @@
             background: #43a047;
             transform: scale(1.03);
         }
+
+        /*INFOGRAFIAS*/
+        #infografia {
+            text-align: center;
+        }
+
+        .galeria-info {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+
+            margin-top: 20px;
+        }
+
+        .galeria-info img {
+            width: 100%;
+
+            border-radius: 15px;
+
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+        .galeria-info img:hover {
+            transform: scale(1.03);
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        /*BILBLIOTECAVIRTUAL*/
+        .doc-container {
+            width: 100%;
+
+            max-width: 1000px;
+
+            margin: 30px auto;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .doc-container iframe {
+            width: 100%;
+
+            height: 800px;
+
+            border: none;
+
+            background: white;
+        }
+
+        .texto-biblioteca {
+            text-align: center;
+
+            margin-bottom: 20px;
+
+            line-height: 1.8;
+        }
     </style>
 </head>
 
@@ -656,11 +723,24 @@
 
     </section>
 
-    <h1>Infografía</h1>
     <section id="infografia">
+        <h1>📊 Infografía</h1>
+
+        <div class="galeria-info">
+
+            <img src="img/mi proyecto.png" alt="Infografía principal">
+
+            <img src="img/1.png" alt="Infografía 1">
+
+            <img src="img/2.png" alt="Infografía 2">
+
+            <img src="img/3.png" alt="Infografía 3">
+
+            <img src="img/4.png" alt="Infografía 4">
+
+        </div>
 
     </section>
-
     <section id="Videos">
 
         <h3>🎥 VIDEOS EDUCATIVOS</h3>
@@ -707,8 +787,22 @@
 
     </section>
 
-    <h1>Biblioteca Virtual</h1>
-    <section id="Biblioteca virtual">
+    <section id="Biblioteca-virtual">
+
+        <h1>📚 Biblioteca Virtual</h1>
+
+        <p class="texto-biblioteca">
+            En esta sección podrás consultar el documento completo relacionado
+            con nuestro proyecto ambiental y las investigaciones realizadas
+            sobre la reutilización del aceite de cocina usado. 🌱♻️
+        </p>
+
+        <div class="doc-container">
+
+            <iframe src="https://docs.google.com/document/d/1qfMqc5O4G3eXu9PM8QZxDwBJZS-VqcuE/preview" allowfullscreen>
+            </iframe>
+
+        </div>
 
     </section>
 
