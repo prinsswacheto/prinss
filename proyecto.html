@@ -498,6 +498,64 @@
 
             background: white;
         }
+        
+        /*PODCASTS YOUTUBE*/
+.podcast-youtube {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 35px auto;
+    max-width: 1000px;
+}
+
+.podcast-youtube-item {
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 18px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    transition: 0.3s ease;
+}
+
+.podcast-youtube-item:hover {
+    transform: translateY(-7px);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.podcast-cover {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
+}
+
+.podcast-youtube-item h3 {
+    margin: 15px 0;
+    color: #a5d6a7;
+}
+
+.podcast-listen {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.podcast-listen:hover {
+    background: #43a047;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .podcast-youtube {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 
@@ -926,6 +984,138 @@
             </iframe>
 
         </div>
+
+       <!-- PODCASTS DE YOUTUBE -->
+<div class="podcast-youtube">
+
+    <div class="podcast-youtube-item">
+        <img
+            src="https://img.youtube.com/vi/AIU5MkE1Tck/maxresdefault.jpg"
+            class="podcast-cover"
+            alt="Portada Podcast 1">
+
+        <h3>🎙️ Capítulo 1</h3>
+
+        <a href="https://youtu.be/AIU5MkE1Tck?si=9PUBg3-CM5qRlyT7"
+           target="_blank"
+           class="podcast-listen">
+            🎧 Escuchar
+        </a>
+    </div>
+
+
+    <div class="podcast-youtube-item">
+        <img
+            src="https://img.youtube.com/vi/af9quHBXdik/maxresdefault.jpg"
+            class="podcast-cover"
+            alt="Portada Podcast 2">
+
+        <h3>🎙️ Capítulo 2</h3>
+
+        <a href="https://youtu.be/af9quHBXdik?si=FxWu-_0_NNKyxoOU"
+           target="_blank"
+           class="podcast-listen">
+            🎧 Escuchar
+        </a>
+    </div>
+
+
+    <div class="podcast-youtube-item">
+        <img
+            src="https://img.youtube.com/vi/jwVUPnvOk4Y/maxresdefault.jpg"
+            class="podcast-cover"
+            alt="Portada Podcast 3">
+
+        <h3>🎙️ Capítulo 3</h3>
+
+        <a href="https://youtu.be/jwVUPnvOk4Y?si=x5Dxnp9g-a1LLzdG"
+           target="_blank"
+           class="podcast-listen">
+            🎧 Escuchar
+        </a>
+    </div>
+
+
+    <div class="podcast-youtube-item">
+        <img
+            src="https://img.youtube.com/vi/R-_Mgl694X4/maxresdefault.jpg"
+            class="podcast-cover"
+            alt="Portada Podcast 4">
+
+        <h3>🎙️ Capítulo 4</h3>
+
+        <a href="https://youtu.be/R-_Mgl694X4?si=YUmN525BLUxfgrkr"
+           target="_blank"
+           class="podcast-listen">
+            🎧 Escuchar
+        </a>
+    </div>
+
+
+    <div class="podcast-youtube-item">
+        <img
+            src="https://img.youtube.com/vi/jlM5Ne42sXk/maxresdefault.jpg"
+            class="podcast-cover"
+            alt="Portada Podcast 5">
+
+        <h3>🎙️ Capítulo 5</h3>
+
+        <a href="https://youtu.be/jlM5Ne42sXk?si=p-SdamCvFe7dtX4O"
+           target="_blank"
+           class="podcast-listen">
+            🎧 Escuchar
+        </a>
+    </div>
+
+
+    <div class="podcast-youtube-item">
+        <img
+            src="https://img.youtube.com/vi/THmlJC4O1tw/maxresdefault.jpg"
+            class="podcast-cover"
+            alt="Portada Podcast 6">
+
+        <h3>🎙️ Capítulo 6</h3>
+
+        <a href="https://youtu.be/THmlJC4O1tw?si=JYctmwHAaVgmMzLp"
+           target="_blank"
+           class="podcast-listen">
+            🎧 Escuchar
+        </a>
+    </div>
+
+
+    <div class="podcast-youtube-item">
+        <img
+            src="https://img.youtube.com/vi/77lsK8mEtq0/maxresdefault.jpg"
+            class="podcast-cover"
+            alt="Portada Podcast 7">
+
+        <h3>🎙️ Capítulo 7</h3>
+
+        <a href="https://youtu.be/77lsK8mEtq0?si=u0itn5zvBTHbjxO9"
+           target="_blank"
+           class="podcast-listen">
+            🎧 Escuchar
+        </a>
+    </div>
+
+
+    <div class="podcast-youtube-item">
+        <img
+            src="https://img.youtube.com/vi/ID_VIDEO_8/maxresdefault.jpg"
+            class="podcast-cover"
+            alt="Portada Podcast 8">
+
+        <h3>🎙️ Capítulo 8</h3>
+
+        <a href="LINK_YOUTUBE_8"
+           target="_blank"
+           class="podcast-listen">
+            🎧 Escuchar
+        </a>
+    </div>
+
+</div>
 
     </section>
 
