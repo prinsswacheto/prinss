@@ -283,6 +283,121 @@
             transform: scale(1.1);
             background: #2e7d32;
         }
+
+        /* ==========================================
+   CONTACTO
+========================================== */
+
+        .contacto-intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 30px;
+        }
+
+        .contacto-intro p {
+            text-align: center;
+        }
+
+        /* CONTENEDOR DE TARJETAS */
+        .contacto-contenido {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* TARJETAS */
+        .contacto-item {
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 18px;
+            padding: 25px 20px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .contacto-item:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.16);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+        }
+
+        /* ICONO */
+        .contacto-icono {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        /* TITULO */
+        .contacto-item h3 {
+            margin: 10px 0;
+            color: #a5d6a7;
+            font-size: 22px;
+            text-align: center;
+        }
+
+        /* DESCRIPCIÓN */
+        .contacto-item p {
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* BOTONES */
+        .contacto-boton {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            background: #1365b6;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .contacto-boton:hover {
+            background: #2e7d32;
+            transform: scale(1.05);
+        }
+
+        /* MENSAJE FINAL */
+        .contacto-final {
+            margin-top: 35px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            background: rgba(46, 125, 50, 0.25);
+            border: 1px solid rgba(165, 214, 167, 0.3);
+        }
+
+        .contacto-final p {
+            text-align: center;
+            margin: 0;
+            font-size: 17px;
+        }
+
+
+        /* ==========================================
+   RESPONSIVE
+========================================== */
+
+        @media (max-width: 768px) {
+
+            .contacto-contenido {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .contacto-item {
+                padding: 22px 18px;
+            }
+
+        }
     </style>
 </head>
 
@@ -354,7 +469,7 @@
         <p>Reutilización de aceite usado para productos sostenibles</p>
     </header>
 
-<nav>
+    <nav>
 
         <!-- INICIO -->
         <div class="menu-item">
@@ -420,7 +535,7 @@
             <a href="multimedia.html" class="menu-btn">
                 Gestión Comunitaria
             </a>
-        
+
             <div class="submenu">
                 <a href="multimedia.html#chat">Chat</a>
                 <a href="multimedia.html#encuesta">Encuesta</a>
@@ -455,84 +570,119 @@
 
     </nav>
 
-<!-- ==========================================
+    <!-- ==========================================
      CONTACTO
 ========================================== -->
 
-<section id="contacto">
+    <section id="contacto">
 
-    <h2>📲 ¡Contáctanos!</h2>
+        <h2>📲 ¡Contáctanos!</h2>
 
-    <p>
-        ¿Tienes alguna pregunta, quieres conocer más sobre nuestro proyecto
-        o deseas comunicarte con nosotros? Puedes encontrarnos a través de
-        nuestros diferentes medios de contacto. 🌱♻️
-    </p>
-
-    <div class="contacto-contenido">
-
-        <!-- GMAIL -->
-        <div class="contacto-item">
+        <div class="contacto-intro">
 
             <p>
-                📧 <strong>Gmail:</strong>
+                ¿Tienes alguna pregunta, quieres conocer más sobre nuestro
+                proyecto o deseas comunicarte con nosotros?
             </p>
 
-            <a href="mailto:prinsswacheto@gmail.com"
-               class="comunitaria-boton">
-                📧 Enviar correo
-            </a>
+            <p>
+                Puedes encontrarnos a través de nuestros diferentes medios
+                de contacto. 🌱♻️
+            </p>
 
         </div>
 
 
-        <!-- INSTAGRAM -->
-        <div class="contacto-item">
+        <!-- ==========================================
+         MEDIOS DE CONTACTO
+    =========================================== -->
 
-            <p>
-                📸 <strong>Instagram:</strong>
-            </p>
+        <div class="contacto-contenido">
 
-            <a href="https://www.instagram.com/artesanias_prinss?stkn=dG9wMHN2enlpamoz&utm_source=chatgpt.com"
-               target="_blank"
-               class="comunitaria-boton">
-                📸 Visitar Instagram
-            </a>
+
+            <!-- CORREO -->
+            <div class="contacto-item">
+
+                <div class="contacto-icono">
+                    📧
+                </div>
+
+                <h3>Correo electrónico</h3>
+
+                <p>
+                    Escríbenos directamente a nuestro correo para realizar
+                    preguntas o solicitar información sobre el proyecto.
+                </p>
+
+                <a href="mailto:prinsswacheto@gmail.com" class="contacto-boton">
+                    📧 Enviar correo
+                </a>
+
+            </div>
+
+
+            <!-- INSTAGRAM -->
+            <div class="contacto-item">
+
+                <div class="contacto-icono">
+                    📸
+                </div>
+
+                <h3>Instagram</h3>
+
+                <p>
+                    Síguenos y conoce más sobre nuestras actividades,
+                    productos y avances del proyecto.
+                </p>
+
+                <a href="https://www.instagram.com/artesanias_prinss?stkn=dG9wMHN2enlpamoz&utm_source=chatgpt.com"
+                    target="_blank" class="contacto-boton">
+                    📸 Visitar Instagram
+                </a>
+
+            </div>
+
+
+            <!-- WHATSAPP -->
+            <div class="contacto-item">
+
+                <div class="contacto-icono">
+                    💬
+                </div>
+
+                <h3>WhatsApp</h3>
+
+                <p>
+                    Únete a nuestro grupo para conocer los números de los
+                    cuatro integrantes y comunicarte directamente con nosotros.
+                </p>
+
+                <a href="https://chat.whatsapp.com/JjvVSNAuZkDCTlHhtOsPnz?s=cl&p=a&mlu=4&ilr=4&utm_source=chatgpt.com"
+                    target="_blank" class="contacto-boton">
+                    💬 Unirse a WhatsApp
+                </a>
+
+            </div>
 
         </div>
 
 
-        <!-- WHATSAPP -->
-        <div class="contacto-item">
+        <!-- ==========================================
+         MENSAJE FINAL
+    =========================================== -->
+
+        <div class="contacto-final">
 
             <p>
-                💬 <strong>WhatsApp:</strong>
+                💚 <strong>
+                    ¡Estaremos felices de atenderte y compartir más sobre
+                    nuestro proyecto!
+                </strong>
             </p>
-
-            <p>
-                Únete a nuestro grupo de WhatsApp. En este grupo encontrarás
-                los números de los cuatro integrantes del proyecto para que
-                puedas comunicarte directamente con nosotros.
-            </p>
-
-            <a href="https://chat.whatsapp.com/JjvVSNAuZkDCTlHhtOsPnz?s=cl&p=a&mlu=4&ilr=4&utm_source=chatgpt.com"
-               target="_blank"
-               class="comunitaria-boton">
-                💬 Unirse a WhatsApp
-            </a>
 
         </div>
 
-    </div>
-
-    <p>
-        💚 <strong>
-            ¡Estaremos felices de atenderte y compartir más sobre nuestro proyecto!
-        </strong>
-    </p>
-
-</section>
-
+    </section>
     <footer>
         <p>© 2026 Proyecto Productivo - Sostenibilidad</p>
     </footer>
