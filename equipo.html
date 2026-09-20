@@ -7,7 +7,7 @@
     <title>Proyecto Productivo - Reutilización de Aceite</title>
 
 
-        <style>
+    <style>
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
@@ -252,6 +252,57 @@
             border: none;
         }
 
+
+        /* DOCUMENTOS */
+        .documentos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .documento-card {
+            background: rgba(255, 255, 255, 0.10);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .documento-card h3 {
+            margin-top: 0;
+        }
+
+        .documento-preview {
+            width: 100%;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .documento-boton {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 10px 18px;
+            background: #1365b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .documento-boton:hover {
+            background: #2e7d32;
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            .documento-preview {
+                height: 350px;
+            }
+        }
+
         /*BOTON SUBIR*/
         #btnArriba {
             position: fixed;
@@ -286,22 +337,21 @@
 
         /*STORY*/
         .story-button {
-    display: inline-block;
-    padding: 14px 28px;
-    background: #2e7d32;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
-}
+            display: inline-block;
+            padding: 14px 28px;
+            background: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
 
-.story-button:hover {
-    transform: scale(1.05);
-    opacity: 0.85;
-}
-
+        .story-button:hover {
+            transform: scale(1.05);
+            opacity: 0.85;
+        }
     </style>
 </head>
 
@@ -373,7 +423,7 @@
         <p>Reutilización de aceite usado para productos sostenibles</p>
     </header>
 
-   <nav>
+    <nav>
 
         <!-- INICIO -->
         <div class="menu-item">
@@ -413,8 +463,11 @@
             </a>
 
             <div class="submenu">
-                <a href="equipo.html#lideres">Líderes</a>
-                <a href="equipo.html#roles">Roles</a>
+                <a href="#story">Story</a>
+                <a href="#documentos">Documentos</a>
+                <a href="#guias">Guías y tutoriales</a>
+                <a href="#foro">Foro de discusión</a>
+                <a href="#capacitaciones">Capacitaciones</a>
             </div>
         </div>
 
@@ -425,7 +478,8 @@
             </a>
 
             <div class="submenu">
-                <a href="implementacion.html#procesos">Procesos</a>
+                <a href="implementacion.html#orientacion">Orientación Académica</a>
+                <a href="implementacion.html#apoyo-profesional">Apoyo Profesional</a>
                 <a href="implementacion.html#implementacion">Implementación</a>
             </div>
         </div>
@@ -435,10 +489,12 @@
             <a href="multimedia.html" class="menu-btn">
                 Gestión Comunitaria
             </a>
-
+        
             <div class="submenu">
-                <a href="multimedia.html#galeria">Galería</a>
-                <a href="multimedia.html#videos">Videos</a>
+                <a href="multimedia.html#chat">Chat</a>
+                <a href="multimedia.html#encuesta">Encuesta</a>
+                <a href="multimedia.html#foro2">Foro</a>
+                <a href="multimedia.html#evidencias">Evidencias</a>
             </div>
         </div>
 
@@ -468,46 +524,237 @@
 
     </nav>
 
+
+    <!-- ==================== STORY ==================== -->
+    <section id="story">
+        <h2>📖 Story</h2>
+
+        <p>
+            Conoce nuestro proyecto a través de pequeñas historias que muestran
+            nuestro proceso, aprendizajes y experiencias. 🌱♻️
+        </p>
+
+        <p>
+            En cada Story Block encontrarás una parte de nuestro recorrido:
+            desde las primeras ideas y la recolección del aceite usado hasta
+            la elaboración de nuestros productos y los retos que hemos enfrentado.
+        </p>
+
+        <p>
+            ✨ <em>
+                Descubre nuestra historia, aprende de nuestras experiencias
+                y acompáñanos en este proceso de transformación.
+            </em>
+        </p>
+
+        <div style="text-align: center; margin-top: 25px;">
+
+
+        </div>
+    </section>
+
+
     <section id="equipo">
         <h2>👥 Equipo de Trabajo</h2>
         <ul>
             <li>Josep Corredor – Producción</li>
-                   <section id="Josep">
-    <h3></h3>
-    <a href="https://drive.google.com/file/d/1kSTPoSrOvTWLNK04rC_8EwUr_Xsij12A/view?usp=sharing"
-       target="_blank"
-       class="story-button">
-        📖 Ver Story de Josep
-    </a>
-</section>
+            <section id="Josep">
+                <iframe class="documento-preview" src="img/1. Story Josep.pdf" allow="autoplay">
+                </iframe>
+                <h3></h3>
+                <a href="https://share.gemini.google/eOJosjpPwiqv" target="_blank" class="story-button">
+                    📖 Ver Story de Josep
+                </a>
+            </section>
             <li>Lakshmi Estrada – Investigación</li>
-                    <section id="iker">
-            <h3></h3>
-    <a href="https://drive.google.com/file/d/1vtklq8ct3EeMOdG4qS7Q6NzaFDEbsmmj/view?usp=sharing"
-       target="_blank"
-       class="story-button">
-        📖 Ver Story de Josep
-    </a>
-        </section>
+            <section id="iker">
+                <h3></h3>
+                <iframe class="documento-preview" src="img/2. Story Iker.pdf" allow="autoplay">
+                </iframe>
+                <a href="https://share.gemini.google/vQpFS8s7wyQN" target="_blank" class="story-button">
+                    📖 Ver Story de Lakshmi
+                </a>
+            </section>
             <li>Gabriela Paipa – Diseño</li>
-                    <section id="Gabriela">
-            <h3></h3>
-    <a href="https://drive.google.com/file/d/1EIzXCk-xAksTuuwLPyGzEIf7SnA6m0lq/view?usp=sharing"
-       target="_blank"
-       class="story-button">
-        📖 Ver Story de Josep
-    </a>
-        </section>
+            <section id="Gabriela">
+                <h3></h3>
+                <iframe class="documento-preview" src="img/3. Story Gaby.pdf" allow="autoplay">
+                </iframe>
+                <a href="https://share.gemini.google/81GHojNPHe8m" target="_blank" class="story-button">
+                    📖 Ver Story de Gabriela
+                </a>
+            </section>
             <li>Danna Suarez – Comunicación</li>
-                    <section id="ofi">
-            <h3></h3>
-    <a href="https://drive.google.com/file/d/1QDg5xlUg3oe-duqGnRPSfdhM7NDEI_n3/view?usp=sharing"
-       target="_blank"
-       class="story-button">
-        📖 Ver Story de Josep
-    </a>
-        </section>
+            <section id="ofi">
+                <h3></h3>
+                <iframe class="documento-preview" src="img/4. Story Danna.pdf" allow="autoplay">
+                </iframe>
+                <a href="https://share.gemini.google/ExrhkKovVEot" target="_blank" class="story-button">
+                    📖 Ver Story de Danna
+                </a>
+            </section>
         </ul>
+
+        <!-- ==================== GUÍAS Y TUTORIALES ==================== -->
+        <section id="guias">
+            <h2>📚 Guías y tutoriales</h2>
+
+            <p>
+                ¡Aprende con nosotros! 🌱♻️
+            </p>
+
+            <p>
+                En esta sección encontrarás <em>guías y tutoriales</em> sobre los
+                diferentes procesos de nuestro proyecto. Te enseñaremos de manera
+                sencilla los materiales, pasos y recomendaciones necesarias para
+                elaborar nuestros productos y aprovechar el aceite de cocina usado.
+            </p>
+
+            <p>
+                Aquí podrás aprender sobre la elaboración de <em>jabones ecológicos,
+                    velas y productos de limpieza</em>, además de conocer diferentes
+                formas de darle una segunda vida a este residuo.
+            </p>
+
+            <p>
+                💡 <em>
+                    Explora nuestras guías, aprende algo nuevo y atrévete a crear
+                    tus propios productos sostenibles.
+                </em>
+            </p>
+
+
+            <!-- ==================== GUÍAS DE LABORATORIO ==================== -->
+
+            <div style="margin-top: 30px;">
+
+                <h3>🧪 Guías de laboratorio</h3>
+
+                <p>
+                    Consulta nuestras guías de laboratorio para conocer los procesos
+                    y actividades desarrolladas durante el proyecto.
+                </p>
+
+                <div style="text-align: center; margin: 20px 0;">
+
+                    <!-- LINK GUÍA DE LABORATORIO 1 -->
+                    <a href="AQUI_VA_EL_LINK_DE_LA_GUIA_1" target="_blank" class="story-button">
+                        📄 Guía de laboratorio 1
+                    </a>
+
+                    <!-- LINK GUÍA DE LABORATORIO 2 -->
+                    <a href="AQUI_VA_EL_LINK_DE_LA_GUIA_2" target="_blank" class="story-button">
+                        📄 Guía de laboratorio 2
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== VIDEOS / TUTORIALES ==================== -->
+
+            <div style="margin-top: 35px;">
+
+                <h3>🎥 Videos y tutoriales</h3>
+
+                <p>
+                    También puedes complementar las guías con nuestros videos
+                    y tutoriales.
+                </p>
+
+                <div style="text-align: center; margin-top: 20px;">
+
+                    <!-- VIDEO 1 -->
+                    <a href="https://youtu.be/cm2av9smt_o?si=k4jLS7qRumT0mh52" target="_blank" class="story-button">
+                        ▶️ Tutorial 1
+                    </a>
+
+                    <!-- VIDEO 2 -->
+                    <a href="https://youtube.com/shorts/8YsM7HBW98A?si=AZddO4kN5bn9M-G-" target="_blank"
+                        class="story-button">
+                        ▶️ Tutorial 2
+                    </a>
+
+                    <!-- VIDEO 3 -->
+                    <a href="https://youtu.be/kmnUHedtgXw?si=4YeEfr7H_dmiiZor" target="_blank" class="story-button">
+                        ▶️ Tutorial 3
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== FORO DE DISCUSIÓN ==================== -->
+        <section id="foro">
+            <h2>💬 Foro de discusión</h2>
+
+            <p>
+                ¡Participa en nuestro foro de discusión! 🌱♻️
+            </p>
+
+            <p>
+                Queremos conocer tu opinión sobre el impacto que puede generar
+                la reutilización del aceite de cocina usado en nuestro entorno.
+            </p>
+
+            <p>
+                En este espacio puedes hacer preguntas, compartir ideas, dar tu
+                opinión y debatir sobre los beneficios, retos y posibles mejoras
+                de nuestro proyecto.
+            </p>
+
+            <div style="text-align: center; margin-top: 25px;">
+
+                <!-- LINK DEL FORO -->
+                <a href="https://www.kialo-edu.com/p/ebde80a0-98a3-4dc6-8fc7-d3de379c90ac/716281" target="_blank"
+                    class="story-button">
+                    💬 Participar en el foro
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== CAPACITACIONES ==================== -->
+        <section id="capacitaciones">
+            <h2>📢 ¿Necesitas más información o una capacitación?</h2>
+
+            <p>
+                Si deseas conocer más sobre nuestro proyecto, aprender alguno de
+                los procesos de elaboración o necesitas orientación para desarrollar
+                una idea o proyecto similar, puedes comunicarte directamente con
+                nosotros a través de nuestro <em>WhatsApp o página de Instagram</em>,
+                cuyos datos se encuentran al final de esta información.
+            </p>
+
+            <p>
+                Nosotros mismos nos encargamos de brindar las capacitaciones y
+                resolver las dudas que puedan surgir, ya sea sobre los materiales,
+                los procesos de elaboración, el aprovechamiento del aceite usado
+                o el desarrollo de productos sostenibles.
+            </p>
+
+            <p>
+                Es importante aclarar que <em>no contamos con una entidad externa
+                    como el SENA u otra institución vinculada directamente con nuestro
+                    proyecto.</em> Los conocimientos que compartimos han sido adquiridos
+                mediante nuestro propio proceso de aprendizaje, la investigación,
+                la práctica y recursos educativos disponibles en plataformas como
+                <strong>YouTube</strong>.
+            </p>
+
+            <p>
+                Por eso, si necesitas información, una explicación, una capacitación
+                o tienes alguna duda relacionada con nuestro proyecto,
+                <em>puedes preguntarnos directamente a nosotros. Estaremos disponibles
+                    para ayudarte y compartir lo que hemos aprendido.</em>
+            </p>
+
+        </section>
 
         <p><strong>🎥 Elevator Pitch:</strong> Inserta aquí tu video</p>
     </section>
