@@ -498,64 +498,114 @@
 
             background: white;
         }
-        
-        /*PODCASTS YOUTUBE*/
-.podcast-youtube {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin: 35px auto;
-    max-width: 1000px;
-}
 
-.podcast-youtube-item {
-    background: rgba(255, 255, 255, 0.10);
-    border-radius: 18px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-    transition: 0.3s ease;
-}
+        /* PODCAST DE YOUTUBE */
+        .podcast-youtube {
+            display: block;
+            width: 100%;
+            max-width: 900px;
+            margin: 35px auto;
+            box-sizing: border-box;
+        }
 
-.podcast-youtube-item:hover {
-    transform: translateY(-7px);
-    background: rgba(255, 255, 255, 0.18);
-}
+        /* TEXTO DE INVITACIÓN */
+        .podcast-intro {
+            text-align: center;
+            margin: 0 auto 30px;
+            padding: 10px 15px;
+            line-height: 1.8;
+        }
 
-.podcast-cover {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 14px;
-    display: block;
-}
+        .podcast-intro h2 {
+            color: #a5d6a7;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
 
-.podcast-youtube-item h3 {
-    margin: 15px 0;
-    color: #a5d6a7;
-}
+        .podcast-intro p {
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 18px;
+        }
 
-.podcast-listen {
-    display: inline-block;
-    padding: 12px 25px;
-    background: #2e7d32;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
+        .podcast-intro strong {
+            color: #a5d6a7;
+        }
 
-.podcast-listen:hover {
-    background: #43a047;
-    transform: scale(1.05);
-}
+        /* REPRODUCTOR DE YOUTUBE */
+        .podcast-player {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            margin: 25px auto;
+            overflow: hidden;
+            border-radius: 18px;
+            background: #000;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(165, 214, 167, 0.35);
+        }
 
-@media (max-width: 768px) {
-    .podcast-youtube {
-        grid-template-columns: 1fr;
-    }
-}
+        .podcast-player iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* BOTÓN PARA ESCUCHAR */
+        .podcast-link {
+            text-align: center;
+            margin: 30px auto 10px;
+        }
+
+        .podcast-listen {
+            display: inline-block;
+            padding: 14px 26px;
+            background: #2e7d32;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: 0.3s ease;
+        }
+
+        .podcast-listen:hover {
+            background: #43a047;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ADAPTACIÓN A CELULARES */
+        @media (max-width: 768px) {
+            .podcast-youtube {
+                margin: 25px auto;
+            }
+
+            .podcast-intro {
+                padding: 5px;
+            }
+
+            .podcast-intro h2 {
+                font-size: 22px;
+            }
+
+            .podcast-intro p {
+                font-size: 15px;
+            }
+
+            .podcast-player {
+                border-radius: 12px;
+            }
+
+            .podcast-listen {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
@@ -668,11 +718,10 @@
             </a>
 
             <div class="submenu">
-                <a href="#story">Story</a>
-                <a href="#documentos">Documentos</a>
-                <a href="#guias">Guías y tutoriales</a>
-                <a href="#foro">Foro de discusión</a>
-                <a href="#capacitaciones">Capacitaciones</a>
+                <a href="equipo.html#story">Story</a>
+                <a href="equipo.html#guias">Guías y tutoriales</a>
+                <a href="equipo.html#foro">Foro de discusión</a>
+                <a href="equipo.html#capacitaciones">Capacitaciones</a>
             </div>
         </div>
 
@@ -694,7 +743,7 @@
             <a href="multimedia.html" class="menu-btn">
                 Gestión Comunitaria
             </a>
-        
+
             <div class="submenu">
                 <a href="multimedia.html#chat">Chat</a>
                 <a href="multimedia.html#encuesta">Encuesta</a>
@@ -991,137 +1040,52 @@
 
         </div>
 
-       <!-- PODCASTS DE YOUTUBE -->
-<div class="podcast-youtube">
+        <!-- PODCAST DE YOUTUBE -->
+        <div class="podcast-youtube">
 
-    <div class="podcast-youtube-item">
-        <img
-            src="https://img.youtube.com/vi/AIU5MkE1Tck/maxresdefault.jpg"
-            class="podcast-cover"
-            alt="Portada Podcast 1">
+            <div class="podcast-intro">
 
-        <h3>🎙️ Capítulo 1</h3>
+                <h2>🎙️ ¡Te invitamos a escuchar nuestro podcast! 🌱♻️</h2>
 
-        <a href="https://youtu.be/AIU5MkE1Tck?si=9PUBg3-CM5qRlyT7"
-           target="_blank"
-           class="podcast-listen">
-            🎧 Escuchar
-        </a>
-    </div>
+                <p>
+                    ¡Descubre más sobre nuestro proyecto Prinss! Te invitamos
+                    a conocer nuestro podcast, un espacio donde compartimos
+                    información, ideas y reflexiones sobre la reutilización
+                    del aceite de cocina usado y su importancia para el
+                    cuidado del medio ambiente.
+                </p>
 
+                <p>
+                    🎧 <strong>¡Ya están disponibles los 8 capítulos en YouTube!</strong>
+                    Ingresa al enlace, disfruta de cada episodio y acompáñanos
+                    en este recorrido hacia un futuro más sostenible.
+                </p>
 
-    <div class="podcast-youtube-item">
-        <img
-            src="https://img.youtube.com/vi/af9quHBXdik/maxresdefault.jpg"
-            class="podcast-cover"
-            alt="Portada Podcast 2">
+                <p>
+                    💚 ¡Dale una oportunidad a nuestras ideas y aprende con nosotros!
+                </p>
 
-        <h3>🎙️ Capítulo 2</h3>
+            </div>
 
-        <a href="https://youtu.be/af9quHBXdik?si=FxWu-_0_NNKyxoOU"
-           target="_blank"
-           class="podcast-listen">
-            🎧 Escuchar
-        </a>
-    </div>
+            <!-- LISTA DE REPRODUCCIÓN COMPLETA -->
+            <div class="podcast-player">
 
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLcxvkgQ_w7dU"
+                    title="Podcast Prinss - Lista de reproducción" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
 
-    <div class="podcast-youtube-item">
-        <img
-            src="https://img.youtube.com/vi/jwVUPnvOk4Y/hqdefault.jpg"
-            class="podcast-cover"
-            alt="Portada Podcast 3">
+            </div>
 
-        <h3>🎙️ Capítulo 3</h3>
+            <div class="podcast-link">
+                <a href="https://www.youtube.com/watch?v=AIU5MkE1Tck&list=PLcxvkgQ_w7dU" target="_blank"
+                    rel="noopener noreferrer" class="podcast-listen">
+                    ▶️ Escuchar podcast en YouTube
+                </a>
+            </div>
 
-        <a href="https://youtu.be/jwVUPnvOk4Y?si=x5Dxnp9g-a1LLzdG"
-           target="_blank"
-           class="podcast-listen">
-            🎧 Escuchar
-        </a>
-    </div>
-
-
-    <div class="podcast-youtube-item">
-        <img
-            src="https://img.youtube.com/vi/R-_Mgl694X4/maxresdefault.jpg"
-            class="podcast-cover"
-            alt="Portada Podcast 4">
-
-        <h3>🎙️ Capítulo 4</h3>
-
-        <a href="https://youtu.be/R-_Mgl694X4?si=YUmN525BLUxfgrkr"
-           target="_blank"
-           class="podcast-listen">
-            🎧 Escuchar
-        </a>
-    </div>
-
-
-    <div class="podcast-youtube-item">
-        <img
-            src="https://img.youtube.com/vi/jlM5Ne42sXk/maxresdefault.jpg"
-            class="podcast-cover"
-            alt="Portada Podcast 5">
-
-        <h3>🎙️ Capítulo 5</h3>
-
-        <a href="https://youtu.be/jlM5Ne42sXk?si=p-SdamCvFe7dtX4O"
-           target="_blank"
-           class="podcast-listen">
-            🎧 Escuchar
-        </a>
-    </div>
-
-
-    <div class="podcast-youtube-item">
-        <img
-            src="https://img.youtube.com/vi/THmlJC4O1tw/maxresdefault.jpg"
-            class="podcast-cover"
-            alt="Portada Podcast 6">
-
-        <h3>🎙️ Capítulo 6</h3>
-
-        <a href="https://youtu.be/THmlJC4O1tw?si=JYctmwHAaVgmMzLp"
-           target="_blank"
-           class="podcast-listen">
-            🎧 Escuchar
-        </a>
-    </div>
-
-
-    <div class="podcast-youtube-item">
-        <img
-            src="https://img.youtube.com/vi/77lsK8mEtq0/maxresdefault.jpg"
-            class="podcast-cover"
-            alt="Portada Podcast 7">
-
-        <h3>🎙️ Capítulo 7</h3>
-
-        <a href="https://youtu.be/77lsK8mEtq0?si=u0itn5zvBTHbjxO9"
-           target="_blank"
-           class="podcast-listen">
-            🎧 Escuchar
-        </a>
-    </div>
-
-
-    <div class="podcast-youtube-item">
-        <img
-            src="https://img.youtube.com/vi/p1thTQXfD0/hqdefault.jpg"
-            class="podcast-cover"
-            alt="Portada Podcast 8">
-
-        <h3>🎙️ Capítulo 8</h3>
-
-        <a href="https://youtu.be/-p1thTQXfD0?si=IlwsLH6KpAGR94T5"
-           target="_blank"
-           class="podcast-listen">
-            🎧 Escuchar
-        </a>
-    </div>
-
-</div>
+        </div>
 
     </section>
 
